@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",                     // Required for path aliases
+    "paths": {
+      "@/*": ["src/*"]                 // Alias '@' points to 'src'
+    }
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

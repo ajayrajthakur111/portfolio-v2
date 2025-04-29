@@ -1,6 +1,6 @@
 
 // src/context/BlogContext.tsx
-import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { BlogPost, BlogFilters } from '@/types/blog.types';
 import { BlogApi } from '@/api/blogApi';
 import { useQuery } from 'react-query';
@@ -12,7 +12,7 @@ interface BlogContextType {
   tags: { name: string; count: number }[];
   filters: BlogFilters;
   isLoading: boolean;
-  error: Error | null;
+  error: unknown;
   setFilters: (filters: BlogFilters) => void;
   searchPosts: (query: string) => void;
 }

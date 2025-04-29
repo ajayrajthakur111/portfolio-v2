@@ -33,7 +33,7 @@ interface BlogListProps {
   featuredPost?: BlogPost | null;
 }
 
-const BlogList: React.FC<BlogListProps> = ({ posts, featuredPost = null }) => {
+const BlogList: React.FC<BlogListProps> = ({ posts, featuredPost  }) => {
   const { theme } = useTheme();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -71,7 +71,7 @@ const BlogList: React.FC<BlogListProps> = ({ posts, featuredPost = null }) => {
     >
       {featuredPost && (
         <FeaturedPostContainer as={motion.div} variants={itemVariants}>
-          <BlogCard post={featuredPost} featured />
+          <BlogCard post={featuredPost} featured={featuredPost.featured} />
         </FeaturedPostContainer>
       )}
       
@@ -82,7 +82,7 @@ const BlogList: React.FC<BlogListProps> = ({ posts, featuredPost = null }) => {
       ) : (
         posts.map((post) => (
           <motion.div key={post.id} variants={itemVariants}>
-            <BlogCard post={post} />
+            <BlogCard post={post} featured={post.featured.toString()}/>
           </motion.div>
         ))
       )}

@@ -24,12 +24,12 @@ const FilterContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
-const FilterButton = styled.button<{ active: boolean; theme: 'light' | 'dark' }>`
+const FilterButton = styled.button<{ $active: boolean; theme: 'light' | 'dark' }>`
   padding: 0.6rem 1.2rem;
-  background-color: ${props => props.active
+  background-color: ${props => props.$active
     ? '#3498db'
     : props.theme === 'dark' ? '#1e1e1e' : '#ffffff'};
-  color: ${props => props.active
+  color: ${props => props.$active
     ? '#ffffff'
     : props.theme === 'dark' ? '#e0e0e0' : '#555555'};
   border: none;
@@ -40,7 +40,7 @@ const FilterButton = styled.button<{ active: boolean; theme: 'light' | 'dark' }>
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   &:hover {
-    background-color: ${props => props.active
+    background-color: ${props => props.$active
       ? '#2980b9'
       : props.theme === 'dark' ? '#2a2a2a' : '#f0f0f0'};
     transform: translateY(-2px);
@@ -105,7 +105,7 @@ const ProjectList: React.FC<ProjectListProps> = ({
     <div>
       <FilterContainer>
         <FilterButton
-          active={selectedCategory === 'all'}
+          $active={selectedCategory === 'all'}
           onClick={() => setSelectedCategory('all')}
           theme={theme}
         >
@@ -114,7 +114,7 @@ const ProjectList: React.FC<ProjectListProps> = ({
         {categories.map((category) => (
           <FilterButton
             key={category}
-            active={selectedCategory === category}
+            $active={selectedCategory === category}
             onClick={() => setSelectedCategory(category)}
             theme={theme}
           >
@@ -125,7 +125,7 @@ const ProjectList: React.FC<ProjectListProps> = ({
 
       <FilterContainer>
         <FilterButton
-          active={selectedTechnology === 'all'}
+          $active={selectedTechnology === 'all'}
           onClick={() => setSelectedTechnology('all')}
           theme={theme}
         >
@@ -134,7 +134,7 @@ const ProjectList: React.FC<ProjectListProps> = ({
         {technologies.slice(0, 5).map((tech) => (
           <FilterButton
             key={tech}
-            active={selectedTechnology === tech}
+            $active={selectedTechnology === tech}
             onClick={() => setSelectedTechnology(tech)}
             theme={theme}
           >

@@ -19,10 +19,10 @@ import { SocialLink } from '@/types/common.types';
 
 // Example social links data - in a real app, this might come from an API
 const socialLinks: SocialLink[] = [
-  { id: '1', platform: 'github', url: 'https://github.com/yourusername' },
-  { id: '2', platform: 'linkedin', url: 'https://linkedin.com/in/yourusername' },
-  { id: '3', platform: 'twitter', url: 'https://twitter.com/yourusername' },
-  { id: '4', platform: 'instagram', url: 'https://instagram.com/yourusername' },
+  { id: '1', platform: 'github', url: 'https://github.com/ajayrajthakur111' },
+  { id: '2', platform: 'linkedin', url: 'https://linkedin.com/in/ajayrajthakur' },
+  { id: '3', platform: 'twitter', url: 'https://x.com/theonly1_ajay' },
+  { id: '4', platform: 'instagram', url: 'https://instagram.com/mr_ajay_thakur__' },
 ];
 
 const SocialLinksContainer = styled(motion.div)`
@@ -197,7 +197,7 @@ const SocialLinksComponent: React.FC = () => {
           </IconWrapper>
           <ContactText>
             <ContactLabel theme={theme}>Location</ContactLabel>
-            <ContactValue theme={theme}>New York, NY, United States</ContactValue>
+            <ContactValue theme={theme}>Bhopal, MP, India</ContactValue>
           </ContactText>
         </ContactInfoItem>
       </ContactInfoList>

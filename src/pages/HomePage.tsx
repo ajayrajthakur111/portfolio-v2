@@ -6,6 +6,8 @@ import Hero from '@/components/home/Hero';
 import FeaturedProjects from '@/components/home/FeaturedProjects';
 import Skills from '@/components/home/Skills';
 import Testimonials from '@/components/home/Testimonials';
+import { Maps } from '@/components/common/Maps';
+import { SocialWork } from '@/components/common/SocialWork';
 
 const HomePageContainer = styled.div`
   max-width: 100%;
@@ -24,6 +26,8 @@ const HomePage: React.FC = () => {
         <FeaturedProjects />
         <Skills />
         <Testimonials />
+        <Maps/>
+        <SocialWork/> 
       </HomePageContainer>
     </Layout>
   );

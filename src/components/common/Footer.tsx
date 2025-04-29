@@ -113,8 +113,7 @@ const Footer: React.FC = () => {
         
         <FooterSection>
           <FooterHeading theme={theme}>Contact</FooterHeading>
-          <p>Email: hello@yourportfolio.com</p>
-          <p>Let's connect and discuss your next project!</p>
+                <p>Email: <Link to="mailto:ajayrajthakur111@gmail.com" style={{ color: '#000' }}>ajayrajthakur111@gmail.com</Link></p>    <p>Let's connect and discuss your next project!</p>
           <FooterLink to="/contact" theme={theme}>Get in Touch →</FooterLink>
         </FooterSection>
       </FooterContent>

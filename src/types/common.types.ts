@@ -6,12 +6,12 @@ export interface SocialLink {
     url: string;
   }
   
-  export interface Skill {
+   export interface Skill {
     id: string;
     name: string;
-    icon: string;
-    category: 'frontend' | 'backend' | 'design' | 'devops' | 'other';
-    level: 'beginner' | 'intermediate' | 'advanced' | 'expert';
+    level: string;
+    category: string;
+    logoUrl: string;
   }
   
   export interface Testimonial {

@@ -9,7 +9,7 @@ import { BlogPost } from '@/types/blog.types';
 
 interface BlogCardProps {
   post: BlogPost;
-  featured?: boolean;
+  featured: string;
 }
 
 const CardContainer = styled(motion.article)<{ featured?: boolean; theme: 'light' | 'dark' }>`
@@ -29,10 +29,9 @@ const CardContainer = styled(motion.article)<{ featured?: boolean; theme: 'light
   }
 `;
 
-const CardImage = styled.div<{ imageUrl: string }>`
+const CardImage = styled.div<{ featured: boolean }>`
   height: ${props => props.featured ? '100%' : '200px'};
   width: ${props => props.featured ? '40%' : '100%'};
-  background-image: url(${props => props.imageUrl});
   background-size: cover;
   background-position: center;
   transition: transform 0.5s;
@@ -45,7 +44,7 @@ const CardImage = styled.div<{ imageUrl: string }>`
   }
 `;
 
-const CardContent = styled.div<{ featured?: boolean }>`
+const CardContent = styled.div`
   padding: 1.5rem;
   flex: 1;
   display: flex;
@@ -64,7 +63,7 @@ const CategoryBadge = styled.span`
   align-self: flex-start;
 `;
 
-const Title = styled(Link)`
+const Title = styled(Link)<{ featured?: boolean }>`
   font-size: ${props => props.featured ? '1.8rem' : '1.4rem'};
   font-weight: 600;
   color: ${props => props.theme === 'dark' ? '#ffffff' : '#222222'};
@@ -76,7 +75,7 @@ const Title = styled(Link)`
   }
 `;
 
-const Excerpt = styled.p`
+const Excerpt = styled.p<{ featured?: boolean }>`
   font-size: 1rem;
   color: ${props => props.theme === 'dark' ? '#a0a0a0' : '#666666'};
   line-height: 1.6;
@@ -131,21 +130,21 @@ const ReadMoreLink = styled(Link)`
   }
 `;
 
-const BlogCard: React.FC<BlogCardProps> = ({ post, featured = false }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ post, featured }) => {
   const { theme } = useTheme();
   
   return (
     <CardContainer 
       layout
-      featured={featured}
+      featured={featured === "true"}
       theme={theme}
       whileHover={{ y: -5 }}
     >
+      <CardContent> 
       <CardImage 
-        imageUrl={post.coverImage || `/api/placeholder/600/400?text=${post.title}`}
-        featured={featured}
+        style={{ backgroundImage: `url(${post.coverImage || `/api/placeholder/600/400?text=${post.title}`})` }}
+        featured={featured === "true"}
       />
-      <CardContent featured={featured}>
         {post.categories.length > 0 && (
           <CategoryBadge>{post.categories[0]}</CategoryBadge>
         )}
@@ -153,12 +152,12 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, featured = false }) => {
         <Title 
           to={`/blog/${post.slug}`} 
           theme={theme}
-          featured={featured}
+          featured={featured === "true"}
         >
           {post.title}
         </Title>
         
-        <Excerpt theme={theme} featured={featured}>
+        <Excerpt theme={theme} featured={featured === "true"}>
           {post.excerpt}
         </Excerpt>
         

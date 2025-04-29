@@ -17,7 +17,7 @@
     publishedAt: string;
     updatedAt?: string;
     readTime: number; // in minutes
-    featured: boolean;
+    featured: string;
   }
   
   export interface BlogFilters {

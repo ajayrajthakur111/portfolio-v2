@@ -16,7 +16,6 @@ interface LayoutProps {
 const Main = styled.main`
   min-height: calc(100vh - 140px); // Adjusting for header and footer
   width: 100%;
-  padding: 2rem 0;
 `;
 
 const Layout: React.FC<LayoutProps> = ({

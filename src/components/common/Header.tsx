@@ -41,7 +41,7 @@ const Logo = styled(Link)`
   }
 `;
 
-const NavLinks = styled.div<{ isOpen: boolean; theme: 'light' | 'dark' }>`
+const NavLinks = styled.div<{ $isOpen: boolean; theme: 'light' | 'dark' }>`
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -55,7 +55,7 @@ const NavLinks = styled.div<{ isOpen: boolean; theme: 'light' | 'dark' }>`
     flex-direction: column;
     justify-content: center;
     background-color: ${props => props.theme === 'dark' ? '#1a1a1a' : '#f8f8f8'};
-    transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${props => props.$isOpen ? 'translateX(0)' : 'translateX(100%)'};
     transition: transform 0.3s ease-in-out;
     z-index: 101;
     padding: 2rem;
@@ -63,20 +63,20 @@ const NavLinks = styled.div<{ isOpen: boolean; theme: 'light' | 'dark' }>`
   }
 `;
 
-const NavLink = styled(Link)<{ active: boolean; theme: 'light' | 'dark' }>`
+const NavLink = styled(Link)<{ $active: boolean; theme: 'light' | 'dark' }>`
   font-size: 1rem;
-  color: ${props => props.active 
+  color: ${props => props.$active 
     ? '#3498db' 
     : props.theme === 'dark' ? '#e0e0e0' : '#333333'};
   text-decoration: none;
-  font-weight: ${props => props.active ? '600' : '400'};
+  font-weight: ${props => props.$active ? '600' : '400'};
   transition: color 0.3s ease;
   position: relative;
 
   &:after {
     content: '';
     position: absolute;
-    width: ${props => props.active ? '100%' : '0'};
+    width: ${props => props.$active ? '100%' : '0'};
     height: 2px;
     bottom: -5px;
     left: 0;
@@ -124,14 +124,14 @@ const MobileMenuBtn = styled.button`
   }
 `;
 
-const Overlay = styled.div<{ isOpen: boolean }>`
+const Overlay = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: ${props => props.isOpen ? 'block' : 'none'};
+  display: ${props => props.$isOpen ? 'block' : 'none'};
   z-index: 100;
 `;
 
@@ -172,14 +172,14 @@ const Header: React.FC = () => {
           {isMenuOpen ? <FiX /> : <FiMenu />}
         </MobileMenuBtn>
         
-        <Overlay isOpen={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
+        <Overlay $isOpen={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
         
-        <NavLinks isOpen={isMenuOpen} theme={theme}>
-          <NavLink to="/" active={location.pathname === '/'} theme={theme}>Home</NavLink>
-          <NavLink to="/about" active={location.pathname === '/about'} theme={theme}>About</NavLink>
-          <NavLink to="/projects" active={location.pathname.startsWith('/projects')} theme={theme}>Projects</NavLink>
-          <NavLink to="/blog" active={location.pathname.startsWith('/blog')} theme={theme}>Blog</NavLink>
-          <NavLink to="/contact" active={location.pathname === '/contact'} theme={theme}>Let's Talk</NavLink>
+        <NavLinks $isOpen={isMenuOpen} theme={theme}>
+          <NavLink to="/" $active={location.pathname === '/'} theme={theme}>Home</NavLink>
+          <NavLink to="/about" $active={location.pathname === '/about'} theme={theme}>About</NavLink>
+          <NavLink to="/projects" $active={location.pathname.startsWith('/projects')} theme={theme}>Projects</NavLink>
+          <NavLink to="/blog" $active={location.pathname.startsWith('/blog')} theme={theme}>Blog</NavLink>
+          <NavLink to="/contact" $active={location.pathname === '/contact'} theme={theme}>Let's Talk</NavLink>
           
           <ThemeToggle onClick={toggleTheme} theme={theme}>
             {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}

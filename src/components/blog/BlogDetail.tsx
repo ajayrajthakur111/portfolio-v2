@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTheme } from '@/hooks/useTheme';
 import { BlogPost } from '@/types/blog.types';
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
 import { FiCalendar, FiClock, FiTag } from 'react-icons/fi';
 
 const BlogDetailContainer = styled.article`
@@ -207,8 +207,8 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
         </div>
       )}
       
-      <Content theme={theme}>
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+      <Content theme={theme}   dangerouslySetInnerHTML={{ __html: post.content }}
+>
       </Content>
       
       {post.tags.length > 0 && (

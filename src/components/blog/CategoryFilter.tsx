@@ -10,12 +10,12 @@ const FilterContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
-const FilterButton = styled.button<{ active: boolean; theme: 'light' | 'dark' }>`
+const FilterButton = styled.button<{ $active: boolean; theme: 'light' | 'dark' }>`
   padding: 0.5rem 1rem;
-  background-color: ${props => props.active
+  background-color: ${props => props.$active
     ? '#3498db'
     : props.theme === 'dark' ? '#2a2a2a' : '#f0f0f0'};
-  color: ${props => props.active
+  color: ${props => props.$active
     ? '#ffffff'
     : props.theme === 'dark' ? '#e0e0e0' : '#555555'};
   border: none;
@@ -25,7 +25,7 @@ const FilterButton = styled.button<{ active: boolean; theme: 'light' | 'dark' }>
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
-    background-color: ${props => props.active
+    background-color: ${props => props.$active
       ? '#2980b9'
       : props.theme === 'dark' ? '#333333' : '#e0e0e0'};
   }
@@ -55,17 +55,17 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
   return (
     <FilterContainer>
       <FilterButton
-        active={selectedCategory === null}
+        $active={selectedCategory === null}
         onClick={() => onSelectCategory(null)}
         theme={theme}
       >
         All
       </FilterButton>
       
-      {categories.map((category) => (
+      {categories?.map?.((category) => (
         <FilterButton
           key={category.name}
-          active={selectedCategory === category.name}
+          $active={selectedCategory === category.name}
           onClick={() => onSelectCategory(category.name)}
           theme={theme}
         >

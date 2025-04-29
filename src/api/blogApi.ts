@@ -6,7 +6,7 @@ import { BlogPost, BlogFilters, CategoryWithCount, TagWithCount } from '@/types/
 export const BlogApi = {
   getAllPosts: async (filters?: BlogFilters): Promise<BlogPost[]> => {
     const response = await api.get('/blog', { params: filters });
-    return response.data;
+    return response.data?.blogs;
   },
   
   getFeaturedPosts: async (): Promise<BlogPost[]> => {

@@ -1,110 +1,108 @@
 // src/data/skills.ts
-import { Skill } from '@/types/common.types';
-
-export const skills: Skill[] = [
+export const skills = [
   {
-    id: '1',
-    name: 'React',
-    icon: 'fab fa-react',
-    category: 'frontend',
-    level: 'expert'
-  },
-  {
-    id: '2',
-    name: 'TypeScript',
-    icon: 'fas fa-code',
-    category: 'frontend',
-    level: 'expert'
-  },
-  {
-    id: '3',
+    id: 'js',
     name: 'JavaScript',
-    icon: 'fab fa-js',
+    level: 'expert',
     category: 'frontend',
-    level: 'expert'
+    logoUrl: 'https://techstack-generator.vercel.app/js-icon.svg',
   },
   {
-    id: '4',
-    name: 'HTML5',
-    icon: 'fab fa-html5',
+    id: 'ts',
+    name: 'TypeScript',
+    level: 'advanced',
     category: 'frontend',
-    level: 'expert'
+    logoUrl: 'https://techstack-generator.vercel.app/ts-icon.svg',
   },
   {
-    id: '5',
-    name: 'CSS3',
-    icon: 'fab fa-css3-alt',
+    id: 'react',
+    name: 'React',
+    level: 'expert',
     category: 'frontend',
-    level: 'expert'
+    logoUrl: 'https://techstack-generator.vercel.app/react-icon.svg',
   },
   {
-    id: '6',
-    name: 'Node.js',
-    icon: 'fab fa-node-js',
-    category: 'backend',
-    level: 'advanced'
+    id: 'redux',
+    name: 'Redux',
+    level: 'advanced',
+    category: 'frontend',
+    logoUrl: 'https://techstack-generator.vercel.app/redux-icon.svg',
   },
   {
-    id: '7',
-    name: 'Express',
-    icon: 'fas fa-server',
-    category: 'backend',
-    level: 'advanced'
+    id: 'webpack',
+    name: 'Webpack',
+    level: 'intermediate',
+    category: 'frontend',
+    logoUrl: 'https://techstack-generator.vercel.app/webpack-icon.svg',
   },
   {
-    id: '8',
-    name: 'MongoDB',
-    icon: 'fas fa-database',
-    category: 'backend',
-    level: 'intermediate'
-  },
-  {
-    id: '9',
-    name: 'PostgreSQL',
-    icon: 'fas fa-database',
-    category: 'backend',
-    level: 'intermediate'
-  },
-  {
-    id: '10',
-    name: 'Git',
-    icon: 'fab fa-git-alt',
-    category: 'devops',
-    level: 'advanced'
-  },
-  {
-    id: '11',
-    name: 'Docker',
-    icon: 'fab fa-docker',
-    category: 'devops',
-    level: 'intermediate'
-  },
-  {
-    id: '12',
-    name: 'AWS',
-    icon: 'fab fa-aws',
-    category: 'devops',
-    level: 'beginner'
-  },
-  {
-    id: '13',
-    name: 'Figma',
-    icon: 'fab fa-figma',
-    category: 'design',
-    level: 'intermediate'
-  },
-  {
-    id: '14',
-    name: 'Adobe XD',
-    icon: 'fas fa-pencil-ruler',
-    category: 'design',
-    level: 'beginner'
-  },
-  {
-    id: '15',
+    id: 'python',
     name: 'Python',
-    icon: 'fab fa-python',
-    category: 'other',
-    level: 'intermediate'
+    level: 'intermediate',
+    category: 'backend',
+    logoUrl: 'https://techstack-generator.vercel.app/python-icon.svg',
+  },
+  {
+    id: 'java',
+    name: 'Java',
+    level: 'intermediate',
+    category: 'backend',
+    logoUrl: 'https://techstack-generator.vercel.app/java-icon.svg',
+  },
+  {
+    id: 'nextjs',
+    name: 'Next.js',
+    level: 'advanced',
+    category: 'frontend',
+    logoUrl: 'https://cdn.worldvectorlogo.com/logos/next-js.svg',
+  },
+  {
+    id: 'netlify',
+    name: 'Netlify',
+    level: 'intermediate',
+    category: 'devops',
+    logoUrl: 'https://cdn.worldvectorlogo.com/logos/netlify.svg',
+  },
+  {
+    id: 'vercel',
+    name: 'Vercel',
+    level: 'intermediate',
+    category: 'devops',
+    logoUrl: 'https://cdn.worldvectorlogo.com/logos/vercel.svg',
+  },
+  {
+    id: 'mysql',
+    name: 'MySQL',
+    level: 'intermediate',
+    category: 'backend',
+    logoUrl: 'https://techstack-generator.vercel.app/mysql-icon.svg',
+  },
+  {
+    id: 'github',
+    name: 'GitHub',
+    level: 'advanced',
+    category: 'devops',
+    logoUrl: 'https://techstack-generator.vercel.app/github-icon.svg',
+  },
+  {
+    id: 'node',
+    name: 'Node.js',
+    level: 'advanced',
+    category: 'backend',
+    logoUrl: 'https://techstack-generator.vercel.app/node-icon.svg',
+  },
+  {
+    id: 'mongodb',
+    name: 'MongoDB',
+    level: 'intermediate',
+    category: 'backend',
+    logoUrl: 'https://techstack-generator.vercel.app/mongodb-icon.svg',
+  },
+  {
+    id: 'aws',
+    name: 'AWS',
+    level: 'beginner',
+    category: 'devops',
+    logoUrl: 'https://techstack-generator.vercel.app/aws-icon.svg',
   }
 ];

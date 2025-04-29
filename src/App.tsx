@@ -8,7 +8,7 @@ import AppRoutes from '@/routes/AppRoutes';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { useContext } from 'react';
 import { darkTheme, lightTheme } from '@/styles/theme';
-
+import './App.css'
 
 
 // Bridge component: converts custom theme to styled-components theme
@@ -24,7 +24,15 @@ const ThemeBridge: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return <StyledThemeProvider theme={styledTheme}>{children}</StyledThemeProvider>;
 };
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      cacheTime: 15 * 60 * 1000, // How long data stays in cache (inactive)
+      refetchOnWindowFocus: false, // See point 2
+    },
+  },
+});
 
 const App: React.FC = () => {
   return (
@@ -41,7 +49,7 @@ const App: React.FC = () => {
         </CustomThemeProvider>
       </QueryClientProvider>
     </HelmetProvider>
-    
+
   );
 };
 

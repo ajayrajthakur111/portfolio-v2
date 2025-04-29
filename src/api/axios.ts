@@ -5,7 +5,7 @@ import axios from 'axios';
 
 // Create a base axios instance
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://api.yourportfolio.com',
+  baseURL: import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
